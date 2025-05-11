@@ -38,7 +38,7 @@ class Home extends StatelessWidget {
               children: <Widget>[
                 ElevatedButton(
                   child: const Text('Button 1'), // Tombol pertama
-                  onPressed: () {}, // Tidak ada aksi
+                  onPressed: () {},
                 ),
                 Container(
                   width: 10, // Jarak horizontal antar tombol
@@ -49,6 +49,7 @@ class Home extends StatelessWidget {
                 ),
               ],
             ),
+            SizedBox(height: 10), // Jarak antar baris tombol
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -65,6 +66,7 @@ class Home extends StatelessWidget {
                 ),
               ],
             ),
+            SizedBox(height: 10), // Jarak antar baris tombol
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[

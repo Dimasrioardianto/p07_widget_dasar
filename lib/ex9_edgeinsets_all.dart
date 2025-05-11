@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'EdgeInsets.all App', // Judul aplikasi
       theme: ThemeData(
+        useMaterial3: false,
         primarySwatch: Colors.blue, // Tema warna utama biru
         visualDensity: VisualDensity.adaptivePlatformDensity, // Kepadatan visual adaptif
       ),

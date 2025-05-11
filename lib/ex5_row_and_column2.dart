@@ -40,17 +40,17 @@ class Home extends StatelessWidget {
               child: const Text('Button 1'), // Tombol pertama
               onPressed: () {}, // Fungsi kosong saat ditekan
             ),
-            Container(width: 10), // Spasi antar tombol (tidak pengaruh vertikal, sebaiknya height)
+            Container(height: 10), // Spasi antar tombol saya rubah ke height
             ElevatedButton(
               child: const Text('Button 2'), // Tombol kedua
               onPressed: () {},
             ),
-            Container(width: 10),
+            Container(height: 10),
             ElevatedButton(
               child: const Text('Button 3'), // Tombol ketiga
               onPressed: () {},
             ),
-            Container(width: 10),
+            Container(height: 10),
             ElevatedButton(
               child: const Text('Button 4'), // Tombol keempat
               onPressed: () {},

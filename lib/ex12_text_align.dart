@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'TextAlign App', // Judul aplikasi
       theme: ThemeData(
-        useMaterial3: true,
+        useMaterial3: false,
         primarySwatch: Colors.blue, // Warna utama tema biru
         visualDensity: VisualDensity.adaptivePlatformDensity, // Penyesuaian tampilan antar perangkat
       ),
@@ -23,10 +23,14 @@ class MyApp extends StatelessWidget {
 
 class Home extends StatelessWidget {
   // Deklarasi teks dengan berbagai pengaturan arah dan perataan
-  final String teks1 = "Nilai TextAlign.start pada teks dengan TextDirection.ltr:";
-  final String teks2 = "Nilai TextAlign.end pada teks dengan TextDirection.ltr:";
-  final String teks3 = "Nilai TextAlign.start pada teks dengan TextDirection.rtl:";
-  final String teks4 = "Nilai TextAlign.end pada teks dengan TextDirection.rtl:";
+  final String teks1 = 
+  '''Nilai TextAlign.start pada teks dengan TextDirection.ltr''';
+  final String teks2 = 
+  '''Nilai TextAlign.end pada teks dengan TextDirection.lt''';
+  final String teks3 = 
+  '''Nilai TextAlign.start pada teks dengan TextDirection.rtl''';
+  final String teks4 = 
+  '''Nilai TextAlign.end pada teks dengan TextDirection.rtl''';
 
   const Home({Key? key}) : super(key: key); // Konstruktor widget Home
 

@@ -21,18 +21,18 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// Widget Home bersifat Stateful karena akan berubah saat tombol ditekan
+// Widget Home bersifat Stateful karena bisa berubah
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
   @override
-  HomeState createState() => HomeState(); // Menghubungkan ke state-nya
+  HomeState createState() => HomeState(); // Menghubungkan ke state
 }
 
 class HomeState extends State<Home> {
-  String fileName = 'images/kemdikbud.png'; // Variabel untuk menyimpan nama file gambar
+  String fileName = 'images/kemdikbud.png'; // File gambar default
 
-  // Fungsi untuk mengubah gambar berdasarkan tombol yang ditekan
+  // Fungsi untuk memilih gambar sesuai tombol ditekan
   void selectImage(int index) {
     setState(() {
       switch (index) {
@@ -42,6 +42,9 @@ class HomeState extends State<Home> {
         case 1:
           fileName = 'images/polbeng.png';
           break;
+        case 2:
+          fileName = 'images/vokasi.png';
+          break;
       }
     });
   }
@@ -49,29 +52,35 @@ class HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar( // Bagian atas layar (AppBar)
-        title: const Text('Demo Action Button'), // Judul pada AppBar
+      appBar: AppBar(
+        title: const Text('Demo Action Button'),
         actions: <Widget>[
           IconButton(
-            icon: const Icon(Icons.laptop), // Tombol icon pertama
+            icon: const Icon(Icons.laptop),
             onPressed: () {
-              selectImage(0); // Tampilkan gambar pertama
+              selectImage(0); // Gambar Kemdikbud
             },
           ),
           IconButton(
-            icon: const Icon(Icons.account_balance), // Tombol icon kedua
+            icon: const Icon(Icons.account_balance),
             onPressed: () {
-              selectImage(1); // Tampilkan gambar kedua
+              selectImage(1); // Gambar Polbeng
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.anchor),
+            onPressed: () {
+              selectImage(2); // Gambar Vokasi
             },
           ),
         ],
       ),
-      body: ListView( // Tampilan scrollable
+      body: ListView(
         children: <Widget>[
           Image.asset(
-            fileName, // Gambar yang ditampilkan berdasarkan variabel fileName
+            fileName,
             height: 350.0,
-            fit: BoxFit.fill, // Menyesuaikan gambar memenuhi area
+            fit: BoxFit.fill, // Gambar memenuhi lebar
           ),
         ],
       ),

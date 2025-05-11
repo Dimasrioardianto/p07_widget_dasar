@@ -1,12 +1,11 @@
-import 'package:flutter/material.dart'; // Import library Flutter Material
+import 'package:flutter/material.dart'; // Mengimpor package material dari Flutter
 
 void main() {
-  runApp(const MyApp()); // Menjalankan aplikasi Flutter
+  runApp(const MyApp()); // Menjalankan aplikasi dengan widget MyApp
 }
 
-// Widget utama, tidak berubah (StatelessWidget)
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key); // Konstruktor MyApp
 
   @override
   Widget build(BuildContext context) {
@@ -14,36 +13,76 @@ class MyApp extends StatelessWidget {
       title: 'Row Column Widget App', // Judul aplikasi
       theme: ThemeData(
         useMaterial3: false,
-        primarySwatch: Colors.blue, // Tema warna utama biru
-        visualDensity: VisualDensity.adaptivePlatformDensity, // Kepadatan visual menyesuaikan perangkat
+        primarySwatch: Colors.blue, // Warna utama biru
+        visualDensity: VisualDensity.adaptivePlatformDensity, // Kepadatan visual disesuaikan
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Demo Row & Column Widget'), // Judul AppBar
-        ),
-        body: Center(
-          child: Column( // Menyusun widget secara vertikal
-            mainAxisAlignment: MainAxisAlignment.center, // Rata tengah
-            children: <Widget>[
-              Row( // Baris pertama
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text('Baris 1, Kolom 1'),
-                  SizedBox(width: 10),
-                  Text('Baris 1, Kolom 2'),
-                ],
-              ),
-              const SizedBox(height: 20), // Spasi vertikal
-              Row( // Baris kedua
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text('Baris 2, Kolom 1'),
-                  SizedBox(width: 10),
-                  Text('Baris 2, Kolom 2'),
-                ],
-              ),
-            ],
-          ),
+      home: const Home(), // Menentukan widget Home sebagai tampilan utama
+    );
+  }
+}
+ 
+class Home extends StatelessWidget {
+  const Home({Key? key}) : super(key: key); // Konstruktor Home
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Demo Row & Column Widget'), // Judul di AppBar
+      ),
+      body: Center(
+        child: Row( // Menggunakan Row untuk menyusun beberapa kolom secara horizontal
+          mainAxisAlignment: MainAxisAlignment.center, // Posisi ditengah secara horizontal
+          children: <Widget>[
+            Column( // Kolom pertama
+              mainAxisAlignment: MainAxisAlignment.center, // Posisi tengah vertikal
+              children: <Widget>[
+                ElevatedButton(
+                  child: const Text('Button 1'),
+                  onPressed: () {},
+                ),
+                SizedBox(height: 10), // Jarak antara Button 1 dan Button 2
+                ElevatedButton(
+                  child: const Text('Button 2'),
+                  onPressed: () {},
+                ),
+              ],
+            ),
+            Container( // Jarak antar kolom
+              width: 10,
+            ),
+            Column( // Kolom kedua
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                ElevatedButton(
+                  child: const Text('Button 3'),
+                  onPressed: () {},
+                ),
+                SizedBox(height: 10), // Jarak antara Button 3 dan Button 4
+                ElevatedButton(
+                  child: const Text('Button 4'),
+                  onPressed: () {},
+                ),
+              ],
+            ),
+            Container( // Jarak antar kolom
+              width: 10,
+            ),
+            Column( // Kolom ketiga
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                ElevatedButton(
+                  child: const Text('Button 5'),
+                  onPressed: () {},
+                ),
+                SizedBox(height: 10), // Jarak antara Button 5 dan Button 6
+                ElevatedButton(
+                  child: const Text('Button 6'),
+                  onPressed: () {},
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
